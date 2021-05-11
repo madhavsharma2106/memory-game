@@ -22,7 +22,9 @@ export const levelWon = (score) => ({
 export const levelLost = () => ({
   type: LEVEL_LOST,
 });
-export const incrementLevel = () => ({ type: NEXT_LEVEL });
+export const incrementLevel = () => {
+  return { type: NEXT_LEVEL };
+};
 export const incrementScore = (score) => ({
   type: INCREMENT_SCORE,
   payload: score,

@@ -11,10 +11,10 @@ import {
 } from "./types";
 
 const initialState = {
-  level: 1,
+  level: parseInt(localStorage.getItem("level")) || 1,
   moves: 0,
   endTime: null,
-  score: 0,
+  score: parseInt(localStorage.getItem("score")) || 0,
   playerState: PLAYER_STATE.notPlayed,
 };
 
@@ -33,9 +33,17 @@ export const memoryGameReducer = (state = initialState, action) => {
       break;
     }
 
-    case START_GAME:
     case RESTART_GAME: {
       state.level = 1;
+      state.moves = 0;
+      state.score = 0;
+      state.endTime = setTimer(22);
+      state.playerState = PLAYER_STATE.isPlaying;
+      break;
+    }
+
+    case START_GAME: {
+      state.level = parseInt(localStorage.getItem("level")) || 1;
       state.moves = 0;
       state.endTime = setTimer(22);
       state.playerState = PLAYER_STATE.isPlaying;
