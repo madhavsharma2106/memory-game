@@ -26,8 +26,8 @@ export const PLAYER_STATE = {
   isPlaying: "isPlaying",
 };
 
-export const calculateScore = (endTime, moves) => {
+export const calculateScore = (endTime, moves, level) => {
   let tNow = new Date();
   let secondsLeft = new Date(endTime - tNow).getSeconds();
-  return secondsLeft * 2 - moves;
+  return Math.floor(secondsLeft * 2 - moves/2) ;
 };

@@ -17,7 +17,7 @@ export const MemoryGame = () => {
   const onMovePlayed = () => dispatch(incrementMove());
   const gameComplete = () => {
     if (playerState === PLAYER_STATE.won) return;
-    dispatch(levelWon(calculateScore(endTime, moves)));
+    dispatch(levelWon(calculateScore(endTime, moves, level)));
   };
 
   return (
