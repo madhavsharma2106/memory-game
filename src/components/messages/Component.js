@@ -2,7 +2,7 @@ import React from "react";
 import { PLAYER_STATE } from "../../utils/misc";
 
 export const MessagesComponent = (props) => {
-  const { gameBegin, playerState, nextLevel, restart } = props;
+  const { gameBegin, playerState, nextLevel, restart, level } = props;
 
   const renderMessage = () => {
     switch (playerState) {
@@ -27,10 +27,18 @@ export const MessagesComponent = (props) => {
       }
       default:
       case PLAYER_STATE.notPlayed: {
-        return (
+        return level > 1 ? (
           <>
-            <p>Welcome to the game.</p>
-            <button onClick={gameBegin}>Start Game</button>
+            <p>Nice to see you back.</p>
+            <div>
+              <button onClick={gameBegin}>Continue </button>
+              <button onClick={restart}>Restart </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <p>Welcome to the Memory Game.</p>
+            <button onClick={gameBegin}>Start </button>
           </>
         );
       }

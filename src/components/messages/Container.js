@@ -11,6 +11,7 @@ export const Messages = () => {
   const dispatch = useDispatch();
   const gameBegin = () => dispatch(startGame());
   const playerState = useSelector((state) => state.memoryGame.playerState);
+  const level = useSelector((state) => state.memoryGame.level);
 
   const nextLevel = () => dispatch(incrementLevel());
   const restart = () => dispatch(restartGame());
@@ -21,6 +22,7 @@ export const Messages = () => {
       playerState={playerState}
       nextLevel={nextLevel}
       restart={restart}
+      level={level}
     />
   );
 };
