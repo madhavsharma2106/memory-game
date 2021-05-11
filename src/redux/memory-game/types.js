@@ -1,0 +1,9 @@
+export const INCREMENT_MOVE = "INCREMENT_MOVE";
+export const STOP_GAME = "STOP_GAME";
+export const RESTART_GAME = "RESTART_GAME";
+export const START_GAME = "START_GAME";
+export const START_LEVEL = "START_LEVEL";
+export const LEVEL_WON = "LEVEL_WON";
+export const LEVEL_LOST = "LEVEL_LOST";
+export const NEXT_LEVEL = "NEXT_LEVEL";
+export const INCREMENT_SCORE = "INCREMENT_SCORE";
