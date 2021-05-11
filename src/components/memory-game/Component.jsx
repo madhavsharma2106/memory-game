@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { createDeck } from "../../utils/misc";
 import { Card } from "../card/Card";
